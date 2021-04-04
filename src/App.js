@@ -62,6 +62,7 @@ function App() {
           <tr>
             <th>Description</th>
             <th>Done</th>
+            <th>Delete</th>
           </tr>
         </thead>
 
@@ -82,6 +83,7 @@ function App() {
             <tr>
               <th>Description</th>
               <th>Done</th>
+              <th>Delete</th>
             </tr>
           </thead>
 
