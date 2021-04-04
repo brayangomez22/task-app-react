@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { TaskRow } from './components/TaskRow'
+import { TaskBanner } from "./components/TaskBanner";
 
 function App() {
 
-  const [userName, setUserName] = useState('brayan')
+  const [userName, setUserName] = useState('Brayan')
   const [taskItems, setTaskItems] = useState([
     {name: 'Task One', done: false},
     {name: 'Task Two', done: false},
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Hello World</h1>
+      <TaskBanner userName={userName} taskItems={taskItems} />
       <table className="table table-striped table-bordered">
         <thead>
           <tr>
