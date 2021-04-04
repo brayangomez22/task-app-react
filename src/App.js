@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TaskRow } from './components/TaskRow'
 
 function App() {
 
@@ -10,18 +11,18 @@ function App() {
     {name: 'Task Four', done: false},
   ])
 
-  const taskTableRows = () => {
-    return taskItems.map(task => (
-      <tr key={task.name}>
-        <td>{task.name}</td>
-      </tr>
+  const toggleTask = task =>
+    setTaskItems(taskItems.map(t => ( t.name === task.name ? {...t, done: !t.done} : t )))
+
+  const taskTableRows = () => 
+    taskItems.map(task => (
+      <TaskRow task={task} key={task.name} toggleTask={toggleTask} />
     ))
-  }
 
   return (
-    <div className="App">
+    <div className="container">
       <h1>Hello World</h1>
-      <table>
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th>Description</th>
